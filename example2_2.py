@@ -64,12 +64,18 @@ def longest_orf(seq):
     """Finds longest open reading frame in DNA sequence."""
     start_codons = 'ATG'
     stop_codons = ['TGA','TAG','TAA']
+
+    #Look for start codon
     old_orf_length = 0
     for i in range(0,len(seq)):
         if seq[i:i+3] in start_codons:
+
+            #search for corresponding stop codon.
             for j in range(i+3,len(seq),3):
                 if seq[j:j+3] in stop_codons:
                     orf_length = j + 3 - i
+
+                    #Check to see if new orf is longer than old.
                     if orf_length > old_orf_length:
                         old_orf_length = orf_length
                         orf_longest = seq[i:j+3]
