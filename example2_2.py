@@ -84,4 +84,6 @@ def longest_orf(seq):
 
 
 #Example 2.4c
-def dna_to_protein(seq)
+import bioinfo_dicts.py
+
+def dna_to_protein(seq):
