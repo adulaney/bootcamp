@@ -81,3 +81,7 @@ def longest_orf(seq):
                         orf_longest = seq[i:j+3]
 
     return orf_longest
+
+
+#Example 2.4c
+def dna_to_protein(seq)
