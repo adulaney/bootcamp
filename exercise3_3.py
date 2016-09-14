@@ -42,7 +42,7 @@ alpha = 1
 beta = 0.2
 delta = 0.3
 gamma = 0.8
-dt = 0.01
+dt = 0.0001
 t = np.arange(0,60,dt)
 
 # Initialize populations

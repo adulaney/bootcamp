@@ -56,11 +56,11 @@ plt.semilogx(q18a_lac[:,0],q18a_lac[:,1], marker='.', markersize=20,
            alpha=0.5)
 plt.semilogx(q18m_lac[:,0],q18m_lac[:,1], marker='.', markersize=20,
            alpha=0.5)
-plt.semilogx(iptg_theory,theoretical_fc_wt, marker='.', markersize=20,
+plt.semilogx(iptg_theory,theoretical_fc_wt, markersize=20,
            alpha=0.5)
-plt.semilogx(iptg_theory,theoretical_fc_q18a, marker='.', markersize=20,
+plt.semilogx(iptg_theory,theoretical_fc_q18a, markersize=20,
            alpha=0.5)
-plt.semilogx(iptg_theory,theoretical_fc_q18m, marker='.', markersize=20,
+plt.semilogx(iptg_theory,theoretical_fc_q18m, markersize=20,
            alpha=0.5)
 plt.legend(('wt lac', 'q18a lac', 'q18m lac', 'wt theoretical',
             'q18a theoretical', 'q18m theoretical'), loc='upper left')
