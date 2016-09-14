@@ -55,9 +55,24 @@ for i in range(1,len(t)):
     r[i] = r[i-1] + (alpha * r[i-1] - beta * r[i-1] * f[i-1]) * dt
     f[i] = f[i-1] + (delta * f[i-1] * r[i-1] - gamma * f[i-1]) * dt
 
+# Using Scipy ODE solver
+def pend(y, t):
+    alpha = 1
+    beta = 0.2
+    delta = 0.3
+    gamma = 0.8
+    rab, fox = y
+    dydt = [alpha * rab - beta * fox * rab, delta * fox * rab - gamma * fox]
+    return dydt
+
+sol = scipy.integrate.odeint(pend, [10,1], t)
+
+# Plot
 plt.plot(t,r)
 plt.plot(t,f)
+plt.plot(t,sol[:,0])
+plt.plot(t,sol[:,1])
 plt.xlabel('time')
 plt.ylabel('Animal Population')
-plt.legend(('Rabbits','Foxes'),loc='best')
+plt.legend(('Rabbits','Foxes', 'Rabbit Scipy', 'Fox Scipy'),loc='best')
 plt.show()
