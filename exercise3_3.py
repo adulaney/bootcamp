@@ -56,7 +56,7 @@ for i in range(1,len(t)):
     f[i] = f[i-1] + (delta * f[i-1] * r[i-1] - gamma * f[i-1]) * dt
 
 # Using Scipy ODE solver
-def pend(y, t):
+def rabbit_pop(y, t):
     alpha = 1
     beta = 0.2
     delta = 0.3
@@ -65,7 +65,7 @@ def pend(y, t):
     dydt = [alpha * rab - beta * fox * rab, delta * fox * rab - gamma * fox]
     return dydt
 
-sol = scipy.integrate.odeint(pend, [10,1], t)
+sol = scipy.integrate.odeint(rabbit_pop, [10,1], t)
 
 # Plot
 plt.plot(t,r)
