@@ -75,11 +75,11 @@ bohr_q18m = bohr_parameter(q18m_lac[:,0], 1328)
 
 
 plt.plot(bohr, fold_change_bohr(bohr), color='black')
-plt.plot(bohr_wt, fold_change_bohr(bohr_wt), marker='.', markersize=20,
+plt.plot(bohr_wt, wt_lac[:,1], marker='.', markersize=20,
            alpha=0.5)
-plt.plot(bohr_q18a, fold_change_bohr(bohr_q18a), marker='.', markersize=20,
+plt.plot(bohr_q18a, q18a_lac[:,1], marker='.', markersize=20,
            alpha=0.5)
-plt.plot(bohr_q18m, fold_change_bohr(bohr_q18m), marker='.', markersize=20,
+plt.plot(bohr_q18m, q18m_lac[:,1], marker='.', markersize=20,
            alpha=0.5)
 plt.legend(('Black line', 'wt theoretical',
             'q18a theoretical', 'q18m theoretical'), loc='upper left')
