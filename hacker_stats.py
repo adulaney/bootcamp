@@ -20,14 +20,14 @@ bs_sample = np.random.choice(bd_1975, replace=True, size=len(bd_1975))
 bs_replicate = np.mean(bs_sample)
 
 # Generate bootstrap
-n_reps = 100000
+n_reps = 10
 bs_replicates_1975 = np.empty(n_reps)
 for i in range(n_reps):
     bs_sample = np.random.choice(bd_1975, replace=True, size=len(bd_1975))
     bs_replicates_1975[i] = np.std(bs_sample)
 conf_int_1975 = np.percentile(bs_replicates_1975, [2.5, 97.5])
 
-n_reps = 100000
+n_reps = 10
 bs_replicates_2012 = np.empty(n_reps)
 for i in range(n_reps):
     bs_sample = np.random.choice(bd_2012, replace=True, size=len(bd_1975))
@@ -43,3 +43,12 @@ conf_int_2012 = np.percentile(bs_replicates_2012, [2.5, 97.5])
 # plt.ylabel('ECDF')
 # plt.legend(('1975', '2012'), loc='lower right')
 # plt.show()
+
+x_ecdf = np.array([])
+y_ecdf = np.array([])
+for i in range(100):
+    bs_sample = np.random.choice(bd_1975, replace=True, size=len(bd_1975))
+    x = np.sort(bs_sample)
+    y = np.arange(1, 1+len(x)) / len(x)
+    x_ecdf = np.concatenate(x_ecdf, np.array([x]))
+    y_ecdf = np.concatenate(y_ecdf, np.array([y]))
