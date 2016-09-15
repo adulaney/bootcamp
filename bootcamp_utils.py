@@ -14,10 +14,11 @@ def ecdf(data):
     return x, y
 
 
-def draw_bs_reps(data, func, size=1, interval=[2.5, 97.5], CI='False'):
+def draw_bs_reps(data, func, size=1, interval=[2.5, 97.5], CI=False):
     """
     Generates bootstrap replicas of data and CI for desired statistic.
     """
+    # Size is number of replicas
     n = len(data)
     bs_replicates = np.empty(size)
     # Generate bootstrap replicas
