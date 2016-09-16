@@ -99,5 +99,5 @@ def image_segmentation(image, hot_pixel=True, illumination=True,
         im_cells = seg_lab
 
     # Show the image
-    plt.imshow(im_cells, cmap=plt.cm.viridis)
+    # plt.imshow(im_cells, cmap=plt.cm.viridis)
     return im_cells
